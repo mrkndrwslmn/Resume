@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Mark Andrew Soliman</title>
+  <style>
+    :root {
+      --primary-text: #212529;
+      --secondary-text: #495057;
+      --accent-color: #0d6efd;
+      --border-color: #dee2e6;
+      --background-color: #f8f9fa;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--primary-text);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--primary-text);
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--secondary-text);
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin: 0 0 16px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 20px;
+      font-size: 14px;
+      color: var(--secondary-text);
+    }
+    
+    .contact-info a {
+      color: var(--secondary-text);
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .experience-item {
+        margin-bottom: 25px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .job-meta {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--secondary-text);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 12px 20px;
+      padding-left: 5px;
+    }
+
+    .skills-grid strong {
+      font-weight: 600;
+      color: var(--primary-text);
+    }
+    
+    .education-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    
+    .education-entry p {
+        margin-bottom: 4px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Mark Andrew Soliman</h1>
+      <div class="contact-info">
+        <span>Calauan, Laguna, Philippines</span>
+        <span>&middot;</span>
+        <a href="mailto:markandrewsoliman@outlook.com">markandrewsoliman@outlook.com</a>
+        <span>&middot;</span>
+        <span>0961-473-6286</span>
+        <span>&middot;</span>
+        <a href="https://www.linkedin.com/in/markandrewsoliman" target="_blank">Linkedin</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Summary</h2>
+      <p>
+        Creative and results-driven Software Developer and Project Lead with extensive experience delivering custom systems and full-stack applications for diverse clients. Specialized in full-stack development, database optimization, and UI/UX design with a strong passion for building scalable, maintainable, and impactful software solutions.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="job-header">
+            <h3 class="job-title">Project Lead / Freelance Software Developer</h3>
+            <span class="job-meta">2021 – Present</span>
+        </div>
+        <p style="font-weight: 500; margin-bottom: 12px;">TREIS ADIUTOR — Independent Freelance Group</p>
+        <ul>
+          <li>Led the end-to-end development and successful delivery of 10+ academic and professional systems, including full-stack web apps, Android apps, and Windows desktop software.</li>
+          <li>Spearheaded client consultations, project scoping, development planning, and quality assurance to meet both rush and standard project timelines.</li>
+          <li>Engineered and implemented complex features such as Role-Based Access Control (RBAC), multi-factor authentication, data analytics dashboards, and third-party API integrations.</li>
+          <li>Developed robust, cross-platform solutions using a diverse tech stack including PHP, Python (Flask/Django), C#, and Java.</li>
+          <li>Managed version control with Git/GitHub, and handled deployment and hosting on platforms like Vercel and Hostinger.</li>          
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <strong>Languages</strong>
+        <span>HTML, CSS, JavaScript, PHP, Python, C#, Java, Kotlin, Node.js</span>
+        
+        <strong>Frameworks</strong>
+        <span>React, Vue, Angular, Express, Flask, Django, .NET, ASP.NET MVC</span>
+
+        <strong>Mobile/Desktop</strong>
+        <span>Android Studio (Java/Kotlin), React Native, Flutter, C# Windows Forms/WPF</span>
+
+        <strong>Databases</strong>
+        <span>MySQL, PostgreSQL, SQLite, MongoDB, Firebase</span>
+
+        <strong>DevOps & Tools</strong>
+        <span>Git, GitHub, GitLab, Vercel, Heroku, cPanel</span>
+        
+        <strong>Design & UX</strong>
+        <span>Figma, Adobe XD, Responsive Design, API Design, System Architecture</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <div class="education-entry">
+          <p><strong>Bachelor of Science in Information Technology (BSIT)</strong></p>
+          <p><em>2023</em></p>
+      </div>
+      <p style="margin: 0; color: var(--secondary-text);">Laguna State Polytechnic University – Sta. Cruz, Laguna</p>
+
+      <div class="education-entry">
+          <p><strong>Accountancy, Business, and Management (ABM)</strong></p>
+          <p><em>2021-2023</em></p>
+      </div>
+      <p style="margin: 0; color: var(--secondary-text);">TRACE College – Los Banos, Laguna</p>
+
+      <div class="education-entry">
+          <p><strong>Elementary Education</strong></p>
+          <p><em>2023</em></p>
+      </div>
+      <p style="margin: 0; color: var(--secondary-text);">Dayap Elementary School – Dayap, Calauan, Laguna</p>
+    </section>
+  </div>
+</body>
+</html>
