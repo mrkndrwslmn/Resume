@@ -1,7 +1,6 @@
 # My Resume
 
-Welcome to my personal resume repository!  
-This repository hosts my **public resume**, which you can view online here:
+Welcome to my personal resume repository! This repository hosts my **public resume**, which you can view online here:
 
 [View My Resume](https://mrkndrwslmn.github.io/Resume/)
 
