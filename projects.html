@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Mark Andrew Soliman">
+  <title>Projects - Mark Andrew Soliman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: '#10b981', dark: '#059669' },
+            accent: { DEFAULT: '#34d399', dark: '#10b981' }
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    .text-gradient { background: linear-gradient(to right, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 antialiased">
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity">
+          mrkndrwslmn.dev
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors">Home</a>
+          <a href="about.html" class="text-gray-300 hover:text-white transition-colors">About</a>
+          <a href="projects.html" class="text-gray-300 hover:text-white transition-colors border-b-2 border-primary">Projects</a>
+          <a href="resume.html" class="text-gray-300 hover:text-white transition-colors">Resume</a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <div id="mobile-menu" class="hidden md:hidden pb-4">
+        <div class="flex flex-col gap-2">
+          <a href="index.html" class="text-gray-300 hover:text-white transition-colors py-2 pl-4">Home</a>
+          <a href="about.html" class="text-gray-300 hover:text-white transition-colors py-2 pl-4">About</a>
+          <a href="projects.html" class="text-gray-300 hover:text-white transition-colors py-2 border-l-2 border-primary pl-4">Projects</a>
+          <a href="resume.html" class="text-gray-300 hover:text-white transition-colors py-2 pl-4">Resume</a>
+          <a href="contact.html" class="text-gray-300 hover:text-white transition-colors py-2 pl-4">Contact</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-16 bg-gray-900/50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4"><span class="text-white">My</span> <span class="text-gradient">Work</span></h1>
+      <p class="text-xl text-gray-400">A selection of projects I've built for clients and personal exploration</p>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="py-20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Project 1: KKB -->
+        <article class="group p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-all hover:scale-105">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-colors">KKB - Split Bills with Friends</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 text-primary rounded-md text-sm font-semibold">Flutter</span>
+              <span class="px-3 py-1 bg-gray-800 text-accent rounded-md text-sm font-semibold">Supabase</span>
+            </div>
+            <p class="text-gray-400 mb-4">The ultimate app for tracking group finances, simplifying payment settlements, and staying on top of who owes what—perfect for roommates, travelers, and anyone sharing costs.</p>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Track Group Expenses in Real-Time</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Settlement Overview for Clarity</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Save Together with Group Goals</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Custom Exchange Rates</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Cloud-Based Data Sync</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-gray-800">
+              <p class="text-sm text-gray-500">Client: Private Individual</p>
+              <p class="text-sm text-gray-500">Duration: 3 Months</p>
+              <p class="text-sm text-gray-500">Completed: August 2025</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: PC LEAGUE -->
+        <article class="group p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-accent transition-all hover:scale-105">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-colors">PC LEAGUE Management System</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 text-accent rounded-md text-sm font-semibold">Node.js</span>
+              <span class="px-3 py-1 bg-gray-800 text-primary rounded-md text-sm font-semibold">Tailwind CSS</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">Supabase</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">Puppeteer</span>
+            </div>
+            <p class="text-gray-400 mb-4">Full-featured inventory and quotation management platform for a PC parts business with role-based access, real-time quotation generation, and PDF export capabilities.</p>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>User Authentication & Role-Based Access</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Quotation Creation and Export</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Inventory Tracking with Stock Alerts</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Sales & Expense Management</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-gray-800">
+              <p class="text-sm text-gray-500">Client: PC LEAGUE</p>
+              <p class="text-sm text-gray-500">Duration: 1 Month</p>
+              <p class="text-sm text-gray-500">Completed: July 2025</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: GradeNet -->
+        <article class="group p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-all hover:scale-105">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-colors">GradeNet - Grading System for CCS</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 text-primary rounded-md text-sm font-semibold">Python</span>
+              <span class="px-3 py-1 bg-gray-800 text-accent rounded-md text-sm font-semibold">Flask</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">MySQL</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">Jinja2</span>
+            </div>
+            <p class="text-gray-400 mb-4">Web-based grade management system for the College of Computer Studies with role-based dashboards and tools for Deans, Faculty, and Students to manage users, subjects, and grades efficiently.</p>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Role-Based Access (Dean, Faculty, Student)</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Bulk Import Students via CSV</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Grade Entry & Calculation</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Secure Login & CSRF Protection</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-gray-800">
+              <p class="text-sm text-gray-500">Client: College of Computer Studies</p>
+              <p class="text-sm text-gray-500">Duration: 1 Month</p>
+              <p class="text-sm text-gray-500">Completed: February 2025</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: T.V.A Express -->
+        <article class="group p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-accent transition-all hover:scale-105">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-colors">T.V.A Express Logistics Inc.</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 text-accent rounded-md text-sm font-semibold">PHP</span>
+              <span class="px-3 py-1 bg-gray-800 text-primary rounded-md text-sm font-semibold">MySQL</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">Tailwind CSS</span>
+              <span class="px-3 py-1 bg-gray-800 text-gray-300 rounded-md text-sm">Alpine.js</span>
+            </div>
+            <p class="text-gray-400 mb-4">Full-featured web application managing truck rental operations, logistics, and fleet management with multi-role access, GPS tracking, and real-time status updates.</p>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Multi-role Authentication (Admin, Driver, Customer)</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Real-time GPS Tracking</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Rental Request & Approval System</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Emergency Issue Reporting</li>
+              <li class="flex items-start"><span class="text-accent mr-2">→</span>Admin Dashboard with Analytics</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-gray-800">
+              <p class="text-sm text-gray-500">Client: Private Individual</p>
+              <p class="text-sm text-gray-500">Duration: 3 Months</p>
+              <p class="text-sm text-gray-500">Completed: February 2025</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: StudyCards -->
+        <article class="group p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-all hover:scale-105">
+          <div class="mb-6">
+            <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-gradient transition-colors">StudyCards</h3>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-gray-800 text-primary rounded-md text-sm font-semibold">Java</span>
+              <span class="px-3 py-1 bg-gray-800 text-accent rounded-md text-sm font-semibold">Android Studio</span>
+            </div>
+            <p class="text-gray-400 mb-4">Android application designed to help users create, manage, and study digital flashcards and study sets with spaced repetition, test modes, and progress tracking—ideal for students and self-learners.</p>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>User Authentication</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Create/Edit Study Sets</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Spaced Repetition Learning</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Test Mode & Progress Tracking</li>
+              <li class="flex items-start"><span class="text-primary mr-2">→</span>Public & Private Sets</li>
+            </ul>
+            <div class="mt-4 pt-4 border-t border-gray-800">
+              <p class="text-sm text-gray-500">Client: Personal Project</p>
+              <p class="text-sm text-gray-500">Duration: 2 Months</p>
+              <p class="text-sm text-gray-500">Completed: November 2024</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Have a Project in Mind?</h2>
+      <p class="text-xl text-gray-400 mb-8">Let's discuss how I can help turn your ideas into reality.</p>
+      <a href="contact.html" class="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50">Start a Project</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-gray-900/50 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-gray-400">
+      <p>&copy; 2025 Mark Andrew Soliman. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+  </script>
+</body>
+</html>

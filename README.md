@@ -1,17 +1,19 @@
-# My Resume
+# Mark Andrew Soliman - Portfolio
 
-Welcome to my personal resume repository! This repository hosts my **public resume**, which you can view online here:
+This is my personal portfolio website showcasing my work as a Software Developer.
 
-[View My Resume](https://mrkndrwslmn.github.io/Resume/)
+## Live Site
 
----
+Visit the live site at: [mrkndrwslmn.dev](https://mrkndrwslmn.dev)
 
-## About
-This project is a simple, web-based resume designed to highlight my skills, experiences, and background. It’s hosted via **GitHub Pages** for easy access and sharing.
+## Contact
 
----
+- Email: markandrewsoliman@outlook.com
+- Phone: 0961-473-6286
+- LinkedIn: [linkedin.com/in/markandrewsoliman](https://www.linkedin.com/in/markandrewsoliman)
+- Location: Calauan, Laguna, Philippines
 
-## 🛠️ Built With
-- **HTML5** – for structure  
-- **CSS3** – for styling  
-- **GitHub Pages** – for hosting  
+## License
+
+© 2025 Mark Andrew Soliman. All rights reserved.
+

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Mark Andrew Soliman</title>
+  <style>
+    .print-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      background: #10b981;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .print-button:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    }
+
+    @media print {
+      .print-button {
+        display: none;
+      }
+    }
+    
+  <style>
+    :root {
+      --primary-text: #212529;
+      --secondary-text: #495057;
+      --accent-color: #0d6efd;
+      --border-color: #dee2e6;
+      --background-color: #f8f9fa;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--primary-text);
+      background-color: var(--background-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--primary-text);
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--secondary-text);
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--border-color);
+    }
+    
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    p {
+      margin: 0 0 16px 0;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+      list-style-type: disc;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px 20px;
+      font-size: 14px;
+      color: var(--secondary-text);
+    }
+    
+    .contact-info a {
+      color: var(--secondary-text);
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+    
+    .experience-item {
+        margin-bottom: 25px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    .job-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    .job-meta {
+      font-size: 15px;
+      font-style: italic;
+      color: var(--secondary-text);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 12px 20px;
+      padding-left: 5px;
+    }
+
+    .skills-grid strong {
+      font-weight: 600;
+      color: var(--primary-text);
+    }
+    
+    .education-entry {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    
+    .education-entry p {
+        margin-bottom: 4px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Mark Andrew Soliman</h1>
+      <div class="contact-info">
+        <span>Calauan, Laguna, Philippines</span>
+        <span>&middot;</span>
+        <a href="mailto:markandrewsoliman@outlook.com">markandrewsoliman@outlook.com</a>
+        <span>&middot;</span>
+        <span>0961-473-6286</span>
+        <span>&middot;</span>
+        <a href="https://www.linkedin.com/in/markandrewsoliman" target="_blank">Linkedin</a>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Summary</h2>
+      <p>
+        Results-driven Full-Stack Web Developer with 2+ years delivering 10+ end-to-end web and cross-platform applications. Comfortable building responsive frontend, backend, and databases. Experienced in authentication, RBAC, API integrations, and deploying apps to Vercel/Hostinger. Looking for a Junior Full-Stack role to apply pragmatic engineering and UX-focused front-end skills to ship customer-facing products.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <strong>Languages</strong>
+        <span>Java, Python, C#, PHP, JavaScript, HTML, CSS</span>
+        
+        <strong>Frameworks/Libraries</strong>
+        <span>React, Flask</span>
+
+        <strong>Mobile/Desktop</strong>
+        <span>Android Studio, React Native, Flutter</span>
+
+        <strong>Databases</strong>
+        <span>MySQL, PostgreSQL, SQLite, Firebase</span>
+
+        <strong>DevOps & Tools</strong>
+        <span>Git/GitHub, Vercel, cPanel</span>
+        
+        <strong>Design & UX</strong>
+        <span>Figma, Adobe XD</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <div class="job-header">
+            <h3 class="job-title">Freelance Software Developer / Project Lead</h3>
+            <span class="job-meta">2021 – Present</span>
+        </div>
+        <p style="font-weight: 500; margin-bottom: 12px;">TREIS ADIUTOR — Independent Freelance Group</p>
+        <ul>
+          <li>
+            Delivered 10+ full-stack systems and applications (web, Android, Windows) for academic and professional clients.
+          </li>
+          <li>
+            Designed and implemented RBAC and multi-factor authentication across 10+ projects, increasing security posture and reducing unauthorized access incidents; built analytics dashboards that surfaced usage metrics used to prioritize feature work.
+          </li>
+          <li>
+            Engineered cross-platform solutions using Flutter, Flask, PHP, C# and Kotlin; launched 3 complete systems that supported 5000+ concurrent users and integrated with third-party APIs.
+          </li>
+          <li>
+            Optimized databases for performance and scalability (MySQL, PostgreSQL, MongoDB).
+          </li>
+          <li>
+            Led end-to-end project lifecycle for 20+ clients — from requirements and prototyping to CI, testing and deployment on Vercel/Hostinger — delivering projects on time and staying within budget.
+          </li>
+          <li>
+            Coordinated cross-functional teams using Git/GitHub and Agile practices; maintained CI-friendly branches and PR processes.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education</h2>
+      <div class="education-entry">
+          <p><strong>Bachelor of Science in Information Technology (BSIT)</strong></p>
+          <p><em>2023</em></p>
+      </div>
+      <p style="margin: 0; color: var(--secondary-text);">Laguna State Polytechnic University – Sta. Cruz, Laguna</p>
+
+      <div class="education-entry">
+          <p><strong>Accountancy, Business, and Management (ABM)</strong></p>
+          <p><em>2021 - 2023</em></p>
+      </div>
+      <p style="margin: 0; color: var(--secondary-text);">TRACE College – Los Banos, Laguna</p>
+    </section>
+  </div>
+
+  <button class="print-button" onclick="window.print()">
+    <svg style="display: inline-block; width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+    </svg>
+    Print Resume
+  </button>
+</body>
+</html>
