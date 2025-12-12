@@ -47,7 +47,7 @@
   <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity font-display">
+        <a href="index.html" class="text-xl font-bold font-mono text-gradient hover:opacity-80 transition-opacity font-display">
           mrkndrwslmn.dev
         </a>
         
@@ -149,10 +149,36 @@
     </div>
   </section>
 
+  <!-- Featured Projects -->
+  <section class="py-20 bg-gray-900/30">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold font-display">
+          <span class="text-white">Featured</span> <span class="text-gradient">Projects</span>
+        </h2>
+        <a href="projects.html" class="text-primary hover:text-accent font-semibold transition-colors flex items-center gap-2">
+          View All Projects
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Loading State -->
+      <div id="featured-projects-loading" class="text-center py-12">
+        <div class="inline-block w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        <p class="text-gray-400 mt-4">Loading projects...</p>
+      </div>
+
+      <!-- Featured Projects Container -->
+      <div id="featured-projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"></div>
+    </div>
+  </section>
+
   <!-- Featured Technologies -->
   <section class="py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-display">
         <span class="text-white">Technologies I</span> <span class="text-gradient">Work With</span>
       </h2>
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
@@ -210,5 +236,84 @@
       });
     });
   </script>
+
+  <!-- Supabase Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <style>
+    .featured-project-card {
+      padding: 1.5rem;
+      background: rgba(17, 24, 39, 0.5);
+      border: 1px solid rgb(31, 41, 55);
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .featured-project-card:hover {
+      border-color: #10b981;
+      transform: translateY(-0.5rem);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    }
+    .featured-project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .featured-project-card h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 0.75rem;
+      font-family: 'Figtree', system-ui, sans-serif;
+      transition: all 0.3s;
+    }
+    .featured-project-card:hover h3 {
+      background: linear-gradient(to right, #10b981, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .featured-project-description {
+      color: rgb(156, 163, 175);
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }
+    .featured-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .featured-tech-tag {
+      padding: 0.25rem 0.5rem;
+      background: rgb(31, 41, 55);
+      color: #34d399;
+      border-radius: 0.25rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .view-details-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      border: 2px solid #10b981;
+      color: #10b981;
+      border-radius: 0.5rem;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .view-details-btn:hover {
+      background: #10b981;
+      color: white;
+    }
+  </style>
 </body>
 </html>

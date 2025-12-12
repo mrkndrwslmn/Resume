@@ -84,6 +84,31 @@ async function fetchExperience() {
 // RENDER FUNCTIONS
 // ============================================
 
+function renderFeaturedProjects(projects) {
+  const container = document.getElementById('featured-projects-container');
+  if (!container) return;
+
+  // Limit to 5 projects
+  const featuredProjects = projects.slice(0, 5);
+
+  container.innerHTML = featuredProjects.map(project => `
+    <div class="featured-project-card">
+      ${project.image_url ? `<img src="${project.image_url}" alt="${project.title}" class="featured-project-image" />` : ''}
+      <h3>${project.title}</h3>
+      <p class="featured-project-description">${project.short_description || project.description.substring(0, 120) + '...'}</p>
+      
+      ${project.technologies && project.technologies.length > 0 ? `
+        <div class="featured-tech-tags">
+          ${project.technologies.slice(0, 3).map(tech => `<span class="featured-tech-tag">${tech}</span>`).join('')}
+          ${project.technologies.length > 3 ? `<span class="featured-tech-tag">+${project.technologies.length - 3}</span>` : ''}
+        </div>
+      ` : ''}
+      
+      <a href="project-detail.html?id=${project.id}" class="view-details-btn">View Details →</a>
+    </div>
+  `).join('');
+}
+
 function renderProjects(projects) {
   const container = document.getElementById('projects-container');
   if (!container) return;
@@ -297,6 +322,16 @@ function renderExperience(experience) {
 // ============================================
 
 document.addEventListener('DOMContentLoaded', async () => {
+  // Load and render featured projects on home page
+  const featuredProjectsContainer = document.getElementById('featured-projects-container');
+  const featuredProjectsLoading = document.getElementById('featured-projects-loading');
+  
+  if (featuredProjectsContainer) {
+    const projects = await fetchProjects();
+    if (featuredProjectsLoading) featuredProjectsLoading.style.display = 'none';
+    renderFeaturedProjects(projects);
+  }
+
   // Load and render projects list
   const projectsContainer = document.getElementById('projects-container');
   const projectsLoading = document.getElementById('projects-loading');

@@ -16,12 +16,20 @@
       theme: {
         extend: {
           colors: {
-            primary: { DEFAULT: '#10b981', dark: '#059669' },
-            accent: { DEFAULT: '#34d399', dark: '#10b981' }
+            primary: {
+              DEFAULT: '#10b981',
+              dark: '#059669',
+            },
+            accent: {
+              DEFAULT: '#34d399',
+              dark: '#10b981',
+            }
           },
           fontFamily: {
+            sans: ['-apple-system', 'Onest', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            mono: ['SF Mono', 'Monaco', 'Cascadia Code', 'Roboto Mono', 'Consolas', 'monospace'],
             display: ['Figtree', 'system-ui', 'sans-serif']
-          }
+          },
         }
       }
     }
@@ -34,7 +42,7 @@
   <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity font-display">
+        <a href="index.html" class="text-xl font-mono font-bold text-gradient hover:opacity-80 transition-opacity font-display">
           mrkndrwslmn.dev
         </a>
         <div class="hidden md:flex items-center gap-8">
