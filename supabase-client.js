@@ -139,11 +139,17 @@ async function fetchProjectById(projectId) {
       .order('display_order', { ascending: true });
 
     // Fetch project images
-    const { data: images } = await client
+    const { data: images, error: imagesError } = await client
       .from('project_images')
       .select('image_url, caption, is_thumbnail')
       .eq('project_id', project.id)
       .order('display_order', { ascending: true });
+
+    if (imagesError) {
+      console.error('Error fetching project images:', imagesError);
+    } else {
+      console.log('Fetched images for project:', project.id, images);
+    }
 
     return {
       ...project,
@@ -163,7 +169,12 @@ function renderProjectDetail(project) {
 
   // Use thumbnail from images table or fallback to image_url
   const thumbnailImage = project.images?.find(img => img.is_thumbnail)?.image_url || project.image_url;
-  const galleryImages = project.images?.filter(img => !img.is_thumbnail) || [];
+  // Show all images in gallery
+  const galleryImages = project.images || [];
+  
+  console.log('Rendering project detail:', project.title);
+  console.log('Gallery images count:', galleryImages.length);
+  console.log('Gallery images:', galleryImages);
 
   container.innerHTML = `
     <div class="project-detail">
