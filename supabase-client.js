@@ -171,14 +171,38 @@ function renderExperience(experience) {
 
 document.addEventListener('DOMContentLoaded', async () => {
   // Load and render projects
-  const projects = await fetchProjects();
-  renderProjects(projects);
+  const projectsContainer = document.getElementById('projects-container');
+  const projectsLoading = document.getElementById('projects-loading');
+  const projectsEmpty = document.getElementById('projects-empty');
+  
+  if (projectsContainer) {
+    const projects = await fetchProjects();
+    if (projectsLoading) projectsLoading.style.display = 'none';
+    
+    if (projects.length === 0 && projectsEmpty) {
+      projectsEmpty.classList.remove('hidden');
+    } else {
+      renderProjects(projects);
+    }
+  }
 
   // Load and render skills
-  const skills = await fetchSkills();
-  renderSkills(skills);
+  const skillsContainer = document.getElementById('skills-container');
+  const skillsLoading = document.getElementById('skills-loading');
+  
+  if (skillsContainer) {
+    const skills = await fetchSkills();
+    if (skillsLoading) skillsLoading.style.display = 'none';
+    renderSkills(skills);
+  }
 
   // Load and render experience
-  const experience = await fetchExperience();
-  renderExperience(experience);
+  const experienceContainer = document.getElementById('experience-container');
+  const experienceLoading = document.getElementById('experience-loading');
+  
+  if (experienceContainer) {
+    const experience = await fetchExperience();
+    if (experienceLoading) experienceLoading.style.display = 'none';
+    renderExperience(experience);
+  }
 });
