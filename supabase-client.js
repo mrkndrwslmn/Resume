@@ -1,14 +1,11 @@
-
-supabase-client.js
 // supabase-client.js
 // Configure your Supabase credentials here
 
 const SUPABASE_URL = 'https://zgntstsqqphixyxicdvv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpnbnRzdHNxcXBoaXh5eGljZHZ2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU1MTM2ODAsImV4cCI6MjA4MTA4OTY4MH0.Ul9h8VFit4OU4uAzIVQF0CNI-TrFsgzbqd3v2LyWDW4'; 
 
-// Initialize Supabase client
-const { createClient } = supabase;
-const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+// Initialize Supabase client (wait for window.supabase to be available)
+const client = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // ============================================
 // FETCH FUNCTIONS
