@@ -68,41 +68,167 @@
     </div>
   </nav>
 
-  <section class="pt-32 pb-16 bg-gray-900/50">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 font-display"><span class="text-white">About</span> <span class="text-gradient">Me</span></h1>
-      <p class="text-xl text-gray-400">Full-Stack Developer passionate about building exceptional digital experiences</p>
+  <!-- Hero Section with Image -->
+  <section class="pt-32 pb-20 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 left-10 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <!-- Text Content -->
+        <div>
+          <p class="text-primary font-mono text-sm mb-4 uppercase tracking-wider">Get to Know Me</p>
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 font-display">
+            <span class="text-white">Crafting Digital</span><br>
+            <span class="text-gradient">Experiences</span>
+          </h1>
+          <p class="text-xl text-gray-400 leading-relaxed mb-8">
+            I’m an aspiring software engineer passionate about building efficient web applications and automating workflows. I specialize in JavaScript, Python, Docker, and ServiceNow, with a growing focus on cloud technologies.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <div class="flex items-center gap-3 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+              <div class="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              <span class="text-gray-300">Available for Projects</span>
+            </div>
+            <div class="flex items-center gap-3 px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg">
+              <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <span class="text-gray-300">Calauan, Laguna</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative">
+          <div class="relative z-10">
+            <img src="images/image.jpg" 
+                 alt="Mark Andrew Soliman" 
+                 class="w-full max-w-md mx-auto rounded-2xl shadow-2xl border-4 border-gray-800 hover:border-primary transition-all duration-300"
+                 style="aspect-ratio: 5/4; object-fit: cover;">
+          </div>
+          <!-- Decorative elements -->
+          <div class="absolute -bottom-6 -left-6 w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl -z-20 blur-xl"></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-20">
+  <!-- About Content Section -->
+  <section class="py-20 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-12">
-        <div class="md:col-span-2 space-y-6 text-gray-300 leading-relaxed text-lg">
-          <h2 class="text-3xl font-bold text-white mb-6 font-display">Who I Am</h2>
-          <p>I'm a results-driven Full-Stack Developer with over 2 years of experience delivering end-to-end web and cross-platform applications. Based in Calauan, Laguna, Philippines, I specialize in building scalable, user-focused solutions that solve real-world problems.</p>
-          <p>My journey in software development began with a passion for creating things that make a difference. Over the years, I've delivered 10+ complete systems supporting 5000+ concurrent users, working with diverse technologies from React and Flask to Flutter and C#.</p>
-          <p>I believe in writing clean, maintainable code and creating intuitive user experiences. Whether it's building a complex authentication system, integrating third-party APIs, or optimizing database performance, I approach every challenge with pragmatic engineering and attention to detail.</p>
+      <div class="grid lg:grid-cols-5 gap-12">
+        <!-- Main Story -->
+        <div class="lg:col-span-3 space-y-6">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 font-display">
+            My <span class="text-gradient">Story</span>
+          </h2>
+          <div class="space-y-6 text-gray-300 leading-relaxed text-lg">
+            <p class="text-xl text-gray-200 font-medium">
+              I am a 3rd Year BSIT student with hands-on experience building 12+ real-world projects, including e-commerce platforms, mobile apps, management systems, workflow automation systems, and logistics applications. I have professional freelancing experience working with startups and student clients, where I served as both a developer and team leader.
+            </p>
+            <p>
+              Based in Calauan, Laguna, Philippines, I specialize in building scalable, user-focused solutions that solve real-world problems. My journey in software development began with a passion for creating things that make a difference.
+            </p>
+            <p>
+              Over the years, I've delivered <span class="text-primary font-semibold">10+ complete systems</span> supporting <span class="text-primary font-semibold">5000+ concurrent users</span>, working with diverse technologies from React and Flask to Flutter and C#.
+            </p>
+            <p>
+              I believe in writing clean, maintainable code and creating intuitive user experiences. Whether it's building a complex authentication system, integrating third-party APIs, or optimizing database performance, I approach every challenge with pragmatic engineering and attention to detail.
+            </p>
+          </div>
+
+          <!-- Quick Stats Cards -->
+          <div class="grid grid-cols-3 gap-4 pt-8">
+            <div class="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl text-center hover:scale-105 transition-transform">
+              <div class="text-4xl font-bold text-gradient mb-2 font-display">2+</div>
+              <div class="text-gray-400 text-sm">Years Experience</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-accent/10 to-primary/10 border border-accent/20 rounded-xl text-center hover:scale-105 transition-transform">
+              <div class="text-4xl font-bold text-gradient mb-2 font-display">10+</div>
+              <div class="text-gray-400 text-sm">Projects Delivered</div>
+            </div>
+            <div class="p-6 bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20 rounded-xl text-center hover:scale-105 transition-transform">
+              <div class="text-4xl font-bold text-gradient mb-2 font-display">5000+</div>
+              <div class="text-gray-400 text-sm">Users Served</div>
+            </div>
+          </div>
         </div>
-        <div class="space-y-6">
-          <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-colors">
-            <h3 class="text-xl font-bold text-white mb-3">Experience</h3>
-            <p class="text-gray-400">2+ years as a Freelance Software Developer, leading projects from conception to deployment.</p>
+
+        <!-- Sidebar Info Cards -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Education Card with Image -->
+          <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-primary transition-all hover:shadow-lg hover:shadow-primary/10 group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 font-display">Education</h3>
+                <p class="text-gray-400 text-sm">Bachelor of Science in Information Technology</p>
+                <p class="text-primary text-sm font-semibold mt-1">Laguna State Polytechnic University</p>
+                <p class="text-gray-500 text-xs mt-1">August 2023 -  Present</p>
+              </div>
+            </div>
           </div>
-          <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-accent transition-colors">
-            <h3 class="text-xl font-bold text-white mb-3">Education</h3>
-            <p class="text-gray-400">Bachelor of Science in Information Technology from Laguna State Polytechnic University (2023).</p>
+
+          <!-- Experience Card -->
+          <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-xl hover:border-accent transition-all hover:shadow-lg hover:shadow-accent/10 group">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center group-hover:bg-accent/20 transition-colors flex-shrink-0">
+                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 font-display">Current Role</h3>
+                <p class="text-gray-400 text-sm">Freelance Software Developer</p>
+                <p class="text-accent text-sm font-semibold mt-1">Leading full-stack projects</p>
+                <p class="text-gray-500 text-xs mt-1">2023 - Present</p>
+              </div>
+            </div>
           </div>
-          <div class="p-6 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-colors">
-            <h3 class="text-xl font-bold text-white mb-3">Approach</h3>
-            <p class="text-gray-400">Agile methodologies, CI/CD practices, and user-centered design principles guide my work.</p>
+
+          <!-- Philosophy Card -->
+          <div class="p-6 bg-gradient-to-br from-primary/5 to-accent/5 border border-primary/30 rounded-xl hover:border-primary transition-all">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white mb-2 font-display">My Approach</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                  Agile methodologies, CI/CD practices, and user-centered design principles guide my work. Clean code and exceptional UX are non-negotiable.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Image (smaller) -->
+          <div class="relative rounded-xl overflow-hidden border-2 border-gray-800 hover:border-primary transition-all group">
+            <img src="images/image.jpg" 
+                 alt="Mark Andrew at work" 
+                 class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                 style="object-position: center;">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent flex items-end p-6">
+              <p class="text-white font-semibold font-display">Behind the Code</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-gray-900/30">
+  <section class="py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 font-display"><span class="text-white">Technical</span> <span class="text-gradient">Expertise</span></h2>
       
@@ -129,14 +255,20 @@
       </div>
       
       <!-- Experience Container (populated dynamically) -->
-      <div id="experience-container" class="max-w-4xl mx-auto space-y-8"></div>
+      <div id="experience-container" class="max-w-7xl mx-auto space-y-8"></div>
     </div>
   </section>
 
+  <!-- What I Do Section -->
   <section class="py-20">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16"><span class="text-white">What I</span> <span class="text-gradient">Do</span></h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display">
+          <span class="text-white">What I</span> <span class="text-gradient">Do</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Specialized services focused on creating robust, scalable solutions</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="group p-8 bg-gray-900/50 border border-gray-800 rounded-lg hover:border-primary transition-all hover:scale-105">
           <div class="w-16 h-16 flex items-center justify-center bg-primary/10 text-primary rounded-lg mb-6 group-hover:bg-primary group-hover:text-white transition-all">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke-width="2"></rect><line x1="8" y1="21" x2="16" y2="21" stroke-width="2"></line><line x1="12" y1="17" x2="12" y2="21" stroke-width="2"></line></svg>
@@ -183,11 +315,36 @@
     </div>
   </section>
 
-  <section class="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Interested in Working Together?</h2>
-      <p class="text-xl text-gray-400 mb-8">Let's discuss how I can help bring your project to life.</p>
-      <a href="contact.html" class="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50">Get In Touch</a>
+  
+  <!-- CTA -->
+  <section class="relative py-24">
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        Open for New Projects
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white font-display">Have a <span class="text-gradient">Project in Mind?</span></h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Let's discuss how I can help turn your ideas into reality with clean, scalable solutions.</p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 font-display">
+          Start a Project
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="resume.html" class="inline-flex items-center justify-center px-8 py-4 bg-gray-900/50 border-2 border-gray-700 hover:border-primary text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg font-display">
+          View Resume
+        </a>
+      </div>
     </div>
   </section>
 

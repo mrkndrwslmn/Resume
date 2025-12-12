@@ -82,28 +82,43 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="min-h-screen flex items-center pt-16">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+  <section class="min-h-screen flex items-center pt-16 relative overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-accent rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
       <div class="max-w-7xl">
-        <p class="text-accent font-mono text-sm mb-4">Hi, I'm</p>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight font-display">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-6">
+          <span class="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+          <p class="text-primary font-mono text-sm uppercase tracking-wider">Available for Projects</p>
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight font-display">
           <span class="text-white">Mark Andrew</span>
           <br>
           <span class="text-gradient">Soliman</span>
         </h1>
-        <p class="text-2xl md:text-3xl text-gray-400 mb-6 font-medium font-display">
+        
+        <p class="text-2xl md:text-3xl text-gray-300 mb-6 font-medium font-display">
           Full-Stack Developer & Software Engineer
         </p>
-        <p class="text-lg text-gray-400 leading-relaxed mb-8 max-w-2xl">
+        
+        <p class="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 max-w-3xl">
           I build modern web applications and scalable systems that solve real-world problems.
-          Specializing in full-stack development with a focus on clean code and exceptional user experiences.
+          Specializing in full-stack development with a focus on <span class="text-primary font-semibold">clean code</span> and <span class="text-primary font-semibold">exceptional user experiences</span>.
         </p>
         
         <div class="flex flex-wrap gap-4 mb-12">
-          <a href="projects.html" class="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50">
+          <a href="projects.html" class="group px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-xl transition-all hover:scale-105 hover:shadow-xl hover:shadow-primary/50 flex items-center gap-2">
             View My Work
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
           </a>
-          <a href="contact.html" class="px-6 py-3 border-2 border-gray-700 hover:border-primary text-gray-300 hover:text-white font-semibold rounded-lg transition-all hover:scale-105">
+          <a href="contact.html" class="px-8 py-4 border-2 border-primary/50 hover:border-primary text-gray-300 hover:text-white font-semibold rounded-xl transition-all hover:scale-105 hover:bg-primary/10">
             Get In Touch
           </a>
         </div>
@@ -130,20 +145,23 @@
   </section>
 
   <!-- Quick Stats -->
-  <section class="py-20 bg-gray-900/50">
+  <section class="py-20 bg-gradient-to-b from-gray-950/100 to-gray-900/30">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-        <div class="group">
-          <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">2+</div>
-          <div class="text-gray-400 text-sm md:text-base">Years Experience</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="group p-8 bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20 rounded-2xl hover:border-primary/50 transition-all hover:scale-105">
+          <div class="text-5xl md:text-6xl font-bold text-gradient mb-3 font-display">2+</div>
+          <div class="text-gray-300 text-base md:text-lg font-medium">Years Experience</div>
+          <div class="text-gray-500 text-sm mt-2">Building innovative solutions</div>
         </div>
-        <div class="group">
-          <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">10+</div>
-          <div class="text-gray-400 text-sm md:text-base">Full System Delivered</div>
+        <div class="group p-8 bg-gradient-to-br from-accent/10 to-primary/5 border border-accent/20 rounded-2xl hover:border-accent/50 transition-all hover:scale-105">
+          <div class="text-5xl md:text-6xl font-bold text-gradient mb-3 font-display">10+</div>
+          <div class="text-gray-300 text-base md:text-lg font-medium">Systems Delivered</div>
+          <div class="text-gray-500 text-sm mt-2">Production-ready projects</div>
         </div>
-        <div class="group">
-          <div class="text-4xl md:text-5xl font-bold text-gradient mb-2">20+</div>
-          <div class="text-gray-400 text-sm md:text-base">Happy Clients</div>
+        <div class="group p-8 bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/20 rounded-2xl hover:border-primary/50 transition-all hover:scale-105 col-span-2 md:col-span-1">
+          <div class="text-5xl md:text-6xl font-bold text-gradient mb-3 font-display">5K+</div>
+          <div class="text-gray-300 text-base md:text-lg font-medium">Users Served</div>
+          <div class="text-gray-500 text-sm mt-2">Concurrent active users</div>
         </div>
       </div>
     </div>
@@ -176,36 +194,97 @@
   </section>
 
   <!-- Featured Technologies -->
-  <section class="py-20">
+  <section class="py-20 bg-gray-950">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 font-display">
-        <span class="text-white">Technologies I</span> <span class="text-gradient">Work With</span>
-      </h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">React</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">JavaScript</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">Python</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">Flask</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">Java</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">C#</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">PHP</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">MySQL</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">PostgreSQL</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">Firebase</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-center font-semibold text-gray-300 hover:text-primary transition-all hover:scale-105">Git</div>
-        <div class="px-6 py-4 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-lg text-center font-semibold text-gray-300 hover:text-accent transition-all hover:scale-105">Vercel</div>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 font-display">
+          <span class="text-white">Technologies I</span> <span class="text-gradient">Work With</span>
+        </h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Modern tools and frameworks for building scalable applications</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 max-w-6xl mx-auto">
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">⚛️</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">React</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">💛</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">JavaScript</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🐍</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">Python</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🔥</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">Flask</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">☕</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">Java</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">💜</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">C#</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🐘</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">PHP</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🗄️</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">MySQL</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🐘</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">PostgreSQL</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🔥</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">Firebase</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-primary/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">🌿</div>
+          <div class="font-semibold text-gray-300 group-hover:text-primary transition-colors font-display">Git</div>
+        </div>
+        <div class="group relative p-6 bg-gray-900/50 border border-gray-800 hover:border-accent rounded-xl text-center transition-all hover:scale-110 hover:shadow-lg hover:shadow-accent/20">
+          <div class="text-2xl mb-2 opacity-50 group-hover:opacity-100 transition-opacity">▲</div>
+          <div class="font-semibold text-gray-300 group-hover:text-accent transition-colors font-display">Vercel</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Let's Build Something Together</h2>
-      <p class="text-xl text-gray-400 mb-8">I'm currently available for freelance work and exciting new projects.</p>
-      <a href="contact.html" class="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50">
-        Start a Conversation
-      </a>
+  <section class="relative py-24 ">
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        Open for Opportunities
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white font-display">Let's Build Something <span class="text-gradient">Together</span></h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">I'm currently available for freelance work, collaborative projects, and exciting new opportunities. Let's turn your ideas into reality.</p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 font-display">
+          Start a Conversation
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="projects.html" class="inline-flex items-center justify-center px-8 py-4 bg-gray-900/50 border-2 border-gray-700 hover:border-primary text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg font-display">
+          View My Work
+        </a>
+      </div>
     </div>
   </section>
 
