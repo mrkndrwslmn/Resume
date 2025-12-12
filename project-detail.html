@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Project Details - Mark Andrew Soliman">
   <title>Project Details - Mark Andrew Soliman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,6 +16,9 @@
           colors: {
             primary: { DEFAULT: '#10b981', dark: '#059669' },
             accent: { DEFAULT: '#34d399', dark: '#10b981' }
+          },
+          fontFamily: {
+            display: ['Figtree', 'system-ui', 'sans-serif']
           }
         }
       }
@@ -27,7 +33,7 @@
   <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity">
+        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity font-display">
           mrkndrwslmn.dev
         </a>
         <div class="hidden md:flex items-center gap-8">
@@ -127,6 +133,7 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      font-family: 'Figtree', system-ui, sans-serif;
     }
     .project-subtitle {
       font-size: 1.25rem;
@@ -235,6 +242,36 @@
     }
     .back-link:hover {
       color: #34d399;
+    }
+    .project-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      background: rgba(31, 41, 55, 0.3);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-0.5rem);
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+    }
+    .gallery-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-caption {
+      padding: 1rem;
+      color: rgb(209, 213, 219);
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    .project-section h3 {
+      font-family: 'Figtree', system-ui, sans-serif;
     }
   </style>
 </body>

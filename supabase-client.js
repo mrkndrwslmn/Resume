@@ -138,10 +138,18 @@ async function fetchProjectById(projectId) {
       .eq('project_id', project.id)
       .order('display_order', { ascending: true });
 
+    // Fetch project images
+    const { data: images } = await client
+      .from('project_images')
+      .select('image_url, caption, is_thumbnail')
+      .eq('project_id', project.id)
+      .order('display_order', { ascending: true });
+
     return {
       ...project,
       features: features?.map(f => f.feature_text) || [],
-      technologies: technologies?.map(t => t.technology_name) || []
+      technologies: technologies?.map(t => t.technology_name) || [],
+      images: images || []
     };
   } catch (error) {
     console.error('Error fetching project:', error);
@@ -153,9 +161,13 @@ function renderProjectDetail(project) {
   const container = document.getElementById('project-detail-container');
   if (!container || !project) return;
 
+  // Use thumbnail from images table or fallback to image_url
+  const thumbnailImage = project.images?.find(img => img.is_thumbnail)?.image_url || project.image_url;
+  const galleryImages = project.images?.filter(img => !img.is_thumbnail) || [];
+
   container.innerHTML = `
     <div class="project-detail">
-      ${project.image_url ? `<img src="${project.image_url}" alt="${project.title}" class="project-detail-image" />` : ''}
+      ${thumbnailImage ? `<img src="${thumbnailImage}" alt="${project.title}" class="project-detail-image" />` : ''}
       
       <div class="project-header">
         <h1>${project.title}</h1>
@@ -208,6 +220,20 @@ function renderProjectDetail(project) {
           <h3>Technologies Used</h3>
           <div class="tech-tags-detail">
             ${project.technologies.map(tech => `<span class="tech-tag-detail">${tech}</span>`).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      ${galleryImages.length > 0 ? `
+        <div class="project-section">
+          <h3>Project Gallery</h3>
+          <div class="project-gallery">
+            ${galleryImages.map(img => `
+              <div class="gallery-item">
+                <img src="${img.image_url}" alt="${img.caption || project.title}" class="gallery-image" />
+                ${img.caption ? `<p class="gallery-caption">${img.caption}</p>` : ''}
+              </div>
+            `).join('')}
           </div>
         </div>
       ` : ''}

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Mark Andrew Soliman">
   <title>Contact - Mark Andrew Soliman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -13,6 +16,9 @@
           colors: {
             primary: { DEFAULT: '#10b981', dark: '#059669' },
             accent: { DEFAULT: '#34d399', dark: '#10b981' }
+          },
+          fontFamily: {
+            display: ['Figtree', 'system-ui', 'sans-serif']
           }
         }
       }
@@ -27,7 +33,7 @@
   <nav class="fixed top-0 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 z-50">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity">
+        <a href="index.html" class="text-xl font-bold text-gradient hover:opacity-80 transition-opacity font-display">
           mrkndrwslmn.dev
         </a>
         <div class="hidden md:flex items-center gap-8">
