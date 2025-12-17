@@ -71,18 +71,18 @@
   <!-- Back to Projects -->
   <section class="pt-24 pb-8">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
-      <a href="projects.html" class="inline-flex items-center text-primary hover:text-accent transition-colors">
-        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      <a href="projects.html" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-900/50 border border-gray-800 hover:border-primary rounded-lg text-primary hover:text-accent transition-all hover:scale-105 font-display">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
         Back to Projects
       </a>
     </div>
   </section>
 
   <!-- Project Detail Content -->
-  <section class="pb-20">
+  <section class="pb-20 min-h-[60vh]">
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <!-- Loading State -->
-      <div id="project-detail-loading" class="text-center py-12">
+      <div id="project-detail-loading" class="text-center py-12 min-h-[50vh] flex flex-col items-center justify-center">
         <div class="inline-block w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
         <p class="text-gray-400 mt-4">Loading project details...</p>
       </div>
@@ -93,11 +93,34 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-20 bg-gradient-to-br from-primary/10 via-accent/10 to-primary/10">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Like What You See?</h2>
-      <p class="text-xl text-gray-400 mb-8">Let's discuss how I can help bring your project to life.</p>
-      <a href="contact.html" class="inline-block px-8 py-4 bg-primary hover:bg-primary-dark text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary/50">Get In Touch</a>
+  <section class="relative py-24 bg-gradient-to-br from-primary/20 via-accent/10 to-primary/20 overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full filter blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    
+    <div class="relative max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-sm text-primary mb-6">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        Available for Projects
+      </div>
+      
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white font-display">Like What You <span class="text-gradient">See?</span></h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Let's discuss how I can help bring your project to life with creative solutions and clean code.</p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/50 font-display">
+          Get In Touch
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="projects.html" class="inline-flex items-center justify-center px-8 py-4 bg-gray-900/50 border-2 border-gray-700 hover:border-primary text-white font-semibold rounded-lg transition-all hover:scale-105 hover:shadow-lg font-display">
+          View More Projects
+        </a>
+      </div>
     </div>
   </section>
 
@@ -119,54 +142,67 @@
   <script src="supabase-client.js"></script>
   <style>
     .project-detail {
-      background: rgba(17, 24, 39, 0.5);
-      border: 1px solid rgb(31, 41, 55);
-      border-radius: 0.75rem;
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.9), rgba(31, 41, 55, 0.6));
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 1.25rem;
       overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
     .project-detail-image {
       width: 100%;
-      height: 400px;
+      height: 500px;
       object-fit: cover;
+      display: block;
     }
     .project-header {
-      padding: 2rem;
-      border-bottom: 1px solid rgb(31, 41, 55);
+      padding: 3rem 2rem;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+      background: linear-gradient(to bottom, rgba(16, 185, 129, 0.05), transparent);
     }
     .project-header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       color: white;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
       background: linear-gradient(to right, #10b981, #34d399);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-family: 'Figtree', system-ui, sans-serif;
+      line-height: 1.2;
     }
     .project-subtitle {
-      font-size: 1.25rem;
-      color: rgb(156, 163, 175);
+      font-size: 1.375rem;
+      color: rgb(209, 213, 219);
+      line-height: 1.6;
     }
     .project-info-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-      border-bottom: 1px solid rgb(31, 41, 55);
-      background: rgba(31, 41, 55, 0.3);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      padding: 2.5rem 2rem;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+      background: linear-gradient(to bottom, rgba(16, 185, 129, 0.03), rgba(52, 211, 153, 0.02));
+    }
+    .info-item {
+      transition: transform 0.3s;
+    }
+    .info-item:hover {
+      transform: translateY(-4px);
     }
     .info-item h4 {
       font-size: 0.875rem;
-      font-weight: 600;
-      color: #10b981;
+      font-weight: 700;
+      color: #34d399;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      font-family: 'Figtree', system-ui, sans-serif;
     }
     .info-item p {
       color: white;
-      font-size: 1rem;
+      font-size: 1.125rem;
+      font-weight: 500;
     }
     .external-link {
       color: #34d399;
@@ -178,21 +214,26 @@
       text-decoration: underline;
     }
     .project-section {
-      padding: 2rem;
-      border-bottom: 1px solid rgb(31, 41, 55);
+      padding: 3rem 2rem;
+      border-bottom: 1px solid rgba(16, 185, 129, 0.1);
     }
     .project-section:last-child {
       border-bottom: none;
     }
     .project-section h3 {
-      font-size: 1.5rem;
+      font-size: 1.875rem;
       font-weight: bold;
       color: white;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+      background: linear-gradient(to right, #10b981, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     .project-full-description {
-      color: rgb(209, 213, 219);
-      line-height: 1.8;
+      color: rgb(229, 231, 235);
+      line-height: 1.9;
       font-size: 1.125rem;
     }
     .features-detail-list {
@@ -200,39 +241,44 @@
       padding: 0;
       margin: 0;
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
     }
     .features-detail-list li {
-      padding: 1rem 1.5rem;
-      background: rgba(16, 185, 129, 0.1);
-      border-left: 4px solid #10b981;
+      padding: 1rem 1.25rem;
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 3px solid #10b981;
       border-radius: 0.5rem;
-      color: rgb(209, 213, 219);
-      font-size: 1rem;
-      transition: all 0.3s;
+      color: rgb(229, 231, 235);
+      font-size: 0.9375rem;
+      transition: all 0.2s;
     }
     .features-detail-list li:hover {
-      background: rgba(16, 185, 129, 0.2);
-      transform: translateX(0.5rem);
+      background: rgba(16, 185, 129, 0.1);
+      border-left-color: #34d399;
+      transform: translateX(0.25rem);
     }
     .tech-tags-detail {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 1rem;
     }
     .tech-tag-detail {
-      padding: 0.5rem 1rem;
-      background: rgb(31, 41, 55);
+      padding: 0.625rem 1.25rem;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(52, 211, 153, 0.08));
       color: #34d399;
-      border: 1px solid #10b981;
-      border-radius: 0.5rem;
-      font-size: 0.875rem;
-      font-weight: 600;
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 0.625rem;
+      font-size: 0.9375rem;
+      font-weight: 700;
       transition: all 0.3s;
+      font-family: 'Figtree', system-ui, sans-serif;
     }
     .tech-tag-detail:hover {
-      background: rgba(16, 185, 129, 0.2);
-      transform: translateY(-2px);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(52, 211, 153, 0.15));
+      border-color: #34d399;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(16, 185, 129, 0.25);
     }
     .error-message {
       text-align: center;
@@ -254,30 +300,52 @@
     }
     .project-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
     }
     .gallery-item {
-      background: rgba(31, 41, 55, 0.3);
-      border-radius: 0.5rem;
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.4));
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 1rem;
       overflow: hidden;
       transition: all 0.3s;
+      position: relative;
+    }
+    .gallery-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .gallery-item:hover::before {
+      opacity: 1;
     }
     .gallery-item:hover {
-      transform: translateY(-0.5rem);
-      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+      transform: translateY(-8px);
+      border-color: #10b981;
+      box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
     }
     .gallery-image {
       width: 100%;
       height: 350px;
       object-fit: cover;
       display: block;
+      transition: transform 0.3s;
+    }
+    .gallery-item:hover .gallery-image {
+      transform: scale(1.05);
     }
     .gallery-caption {
-      padding: 1rem;
-      color: rgb(209, 213, 219);
-      font-size: 0.875rem;
+      padding: 1.25rem;
+      color: rgb(229, 231, 235);
+      font-size: 0.9375rem;
       text-align: center;
+      position: relative;
+      z-index: 2;
     }
     .project-section h3 {
       font-family: 'Figtree', system-ui, sans-serif;

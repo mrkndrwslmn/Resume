@@ -88,8 +88,8 @@ function renderFeaturedProjects(projects) {
   const container = document.getElementById('featured-projects-container');
   if (!container) return;
 
-  // Limit to 5 projects
-  const featuredProjects = projects.slice(0, 5);
+  // Limit to 6 projects
+  const featuredProjects = projects.slice(0, 6);
 
   container.innerHTML = featuredProjects.map(project => `
     <div class="featured-project-card">
@@ -192,12 +192,13 @@ function renderProjectDetail(project) {
   const container = document.getElementById('project-detail-container');
   if (!container || !project) return;
 
-  // Use thumbnail from images table or fallback to image_url
-  const thumbnailImage = project.images?.find(img => img.is_thumbnail)?.image_url || project.image_url;
-  // Show all images in gallery
-  const galleryImages = project.images || [];
+  // Use the thumbnail from projects table (same as index page)
+  const thumbnailImage = project.image_url;
+  // Show only non-thumbnail images in gallery
+  const galleryImages = project.images?.filter(img => !img.is_thumbnail) || [];
   
   console.log('Rendering project detail:', project.title);
+  console.log('Thumbnail image:', thumbnailImage);
   console.log('Gallery images count:', galleryImages.length);
   console.log('Gallery images:', galleryImages);
 
