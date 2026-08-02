@@ -1,0 +1,122 @@
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@700;800&family=Caveat:wght@700&display=swap');
+
+:root {
+  --bg-color: #FDFBF7;
+  --text-color: #111111;
+  --accent-color: #CCFF00; /* Electric Lime */
+  --accent-dark: #AADD00;
+  --dark-section-bg: #1A1A1A;
+  --dark-section-text: #FDFBF7;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-display {
+  font-family: 'Syne', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+  text-transform: none;
+}
+
+/* Marquee */
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  background-color: var(--text-color);
+  color: var(--accent-color);
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+}
+
+.marquee-content {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding-right: 2rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Pill Button */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--text-color);
+}
+.pill-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+/* Rounded cards */
+.soft-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+}
+
+/* Circular Badge */
+.orbit-badge {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-weight: bold;
+  font-family: 'Syne', sans-serif;
+  text-align: center;
+  line-height: 1.1;
+  font-size: 0.8rem;
+  animation: spin 10s linear infinite;
+  z-index: 10;
+  border: 2px solid var(--text-color);
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* Dark section */
+.dark-section {
+  background-color: var(--dark-section-bg);
+  color: var(--dark-section-text);
+}
+.dark-section .marquee-wrapper {
+  background-color: var(--accent-color);
+  color: var(--dark-section-bg);
+  border-color: var(--accent-color);
+}

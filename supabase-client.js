@@ -37,8 +37,8 @@ async function fetchProjects() {
 
         return {
           ...project,
-          features: features?.map(f => f.feature_text) || [],
-          technologies: technologies?.map(t => t.technology_name) || []
+          features: [...new Set(features?.map(f => f.feature_text) || [])],
+          technologies: [...new Set(technologies?.map(t => t.technology_name) || [])].filter(tech => tech.toLowerCase() !== 'web development')
         };
       })
     );
@@ -88,23 +88,26 @@ function renderFeaturedProjects(projects) {
   const container = document.getElementById('featured-projects-container');
   if (!container) return;
 
-  // Limit to 6 projects
-  const featuredProjects = projects.slice(0, 6);
+  const featuredProjects = projects.slice(0, 4);
 
   container.innerHTML = featuredProjects.map(project => `
-    <div class="featured-project-card">
-      ${project.image_url ? `<img src="${project.image_url}" alt="${project.title}" class="featured-project-image" />` : ''}
-      <h3>${project.title}</h3>
-      <p class="featured-project-description">${project.short_description || project.description.substring(0, 120) + '...'}</p>
+    <div class="soft-card bg-black border-2 border-black flex flex-col group hover:bg-[var(--accent-color)] transition-colors duration-300">
+      <div class="relative w-full aspect-video rounded-xl overflow-hidden mb-6 border-2 border-transparent group-hover:border-black transition-colors">
+        ${project.image_url ? `<img src="${project.image_url}" alt="${project.title}" class="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500" />` : '<div class="w-full h-full bg-gray-800"></div>'}
+      </div>
+      <h3 class="text-3xl font-black font-display text-white group-hover:text-black uppercase mb-2 leading-tight">${project.title}</h3>
+      <p class="text-gray-400 group-hover:text-black font-medium text-sm mb-6 flex-grow">${project.short_description || project.description.substring(0, 100) + '...'}</p>
       
       ${project.technologies && project.technologies.length > 0 ? `
-        <div class="featured-tech-tags">
-          ${project.technologies.slice(0, 3).map(tech => `<span class="featured-tech-tag">${tech}</span>`).join('')}
-          ${project.technologies.length > 3 ? `<span class="featured-tech-tag">+${project.technologies.length - 3}</span>` : ''}
+        <div class="flex flex-wrap gap-2 mb-6">
+          ${project.technologies.slice(0, 3).map(tech => `<span class="px-2 py-1 bg-white/10 group-hover:bg-black/10 text-white group-hover:text-black text-xs font-bold uppercase rounded-md">${tech}</span>`).join('')}
+          ${project.technologies.length > 3 ? `<span class="px-2 py-1 bg-white/10 group-hover:bg-black/10 text-white group-hover:text-black text-xs font-bold uppercase rounded-md">+${project.technologies.length - 3}</span>` : ''}
         </div>
       ` : ''}
       
-      <a href="project-detail.html?id=${project.id}" class="view-details-btn">View Details →</a>
+      <a href="project-detail.html?id=${project.id}" class="inline-flex items-center text-white group-hover:text-black font-bold uppercase text-sm group/btn">
+        View Case Study <span class="ml-2 bg-[var(--accent-color)] group-hover:bg-black text-black group-hover:text-white w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover/btn:translate-x-2">↗</span>
+      </a>
     </div>
   `).join('');
 }
@@ -113,31 +116,34 @@ function renderProjects(projects) {
   const container = document.getElementById('projects-container');
   if (!container) return;
 
-  container.innerHTML = projects.map(project => `
-    <div class="project-card">
-      ${project.image_url ? `<img src="${project.image_url}" alt="${project.title}" class="project-image" />` : ''}
-      <div class="project-content">
-        <h3>${project.title}</h3>
-        <p class="project-description">${project.short_description || project.description.substring(0, 150) + '...'}</p>
-        
-        ${project.technologies && project.technologies.length > 0 ? `
-          <div class="tech-stack">
-            <div class="tech-tags">
-              ${project.technologies.slice(0, 3).map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
-              ${project.technologies.length > 3 ? `<span class="tech-tag">+${project.technologies.length - 3} more</span>` : ''}
-            </div>
-          </div>
-        ` : ''}
-        
-        <div class="project-meta">
-          ${project.client ? `<p><strong>Client:</strong> ${project.client}</p>` : ''}
-          ${project.completed_date ? `<p><strong>Completed:</strong> ${new Date(project.completed_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</p>` : ''}
+  container.innerHTML = projects.map((project, index) => {
+    const num = (index + 1).toString().padStart(2, '0');
+    const year = project.completed_date ? new Date(project.completed_date).getFullYear() : '';
+    
+    return `
+    <div class="group border-b-2 border-black py-8 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:bg-[var(--accent-color)] transition-colors duration-300 px-4 -mx-4">
+      <div class="flex items-start gap-6 md:w-1/2">
+        <span class="text-2xl font-black font-display text-gray-400 group-hover:text-black">${num}</span>
+        <div>
+          <h3 class="text-3xl md:text-4xl font-black font-display uppercase mb-2 group-hover:text-black leading-none">${project.title}</h3>
+          <p class="text-gray-600 font-medium group-hover:text-black/80 max-w-md">${project.short_description || project.description.substring(0, 100) + '...'}</p>
         </div>
-
-        <a href="project-detail.html?id=${project.id}" class="project-link">View Details →</a>
+      </div>
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 md:w-1/2 mt-4 md:mt-0">
+        <div class="flex flex-wrap gap-2">
+          ${project.technologies && project.technologies.length > 0 ? project.technologies.slice(0, 3).map(tech => `<span class="px-2 py-1 border border-black text-black text-xs font-bold uppercase rounded-md group-hover:bg-black group-hover:text-white transition-colors">${tech}</span>`).join('') : ''}
+        </div>
+        
+        <div class="flex items-center justify-between md:justify-end gap-8 w-full md:w-auto">
+          <span class="font-mono font-bold text-gray-500 group-hover:text-black">${year}</span>
+          <a href="project-detail.html?id=${project.id}" class="pill-btn bg-black text-white border-black hover:bg-white hover:text-black whitespace-nowrap text-sm group-hover:bg-white group-hover:text-black group-hover:border-black hover:!bg-black hover:!text-white">
+            View Case Study ↗
+          </a>
+        </div>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 async function fetchProjectById(projectId) {
@@ -178,8 +184,8 @@ async function fetchProjectById(projectId) {
 
     return {
       ...project,
-      features: features?.map(f => f.feature_text) || [],
-      technologies: technologies?.map(t => t.technology_name) || [],
+      features: [...new Set(features?.map(f => f.feature_text) || [])],
+      technologies: [...new Set(technologies?.map(t => t.technology_name) || [])].filter(tech => tech.toLowerCase() !== 'web development'),
       images: images || []
     };
   } catch (error) {
@@ -192,89 +198,81 @@ function renderProjectDetail(project) {
   const container = document.getElementById('project-detail-container');
   if (!container || !project) return;
 
-  // Use the thumbnail from projects table (same as index page)
   const thumbnailImage = project.image_url;
-  // Show only non-thumbnail images in gallery
   const galleryImages = project.images?.filter(img => !img.is_thumbnail) || [];
-  
-  console.log('Rendering project detail:', project.title);
-  console.log('Thumbnail image:', thumbnailImage);
-  console.log('Gallery images count:', galleryImages.length);
-  console.log('Gallery images:', galleryImages);
 
   container.innerHTML = `
-    <div class="project-detail">
-      ${thumbnailImage ? `<img src="${thumbnailImage}" alt="${project.title}" class="project-detail-image" />` : ''}
-      
-      <div class="project-header">
-        <h1>${project.title}</h1>
-        ${project.short_description ? `<p class="project-subtitle">${project.short_description}</p>` : ''}
-      </div>
-
-      <div class="project-info-grid">
-        ${project.client ? `
-          <div class="info-item">
-            <h4>Client</h4>
-            <p>${project.client}</p>
-          </div>
-        ` : ''}
-        ${project.duration ? `
-          <div class="info-item">
-            <h4>Duration</h4>
-            <p>${project.duration}</p>
-          </div>
-        ` : ''}
-        ${project.completed_date ? `
-          <div class="info-item">
-            <h4>Completed</h4>
-            <p>${new Date(project.completed_date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-          </div>
-        ` : ''}
-        ${project.project_url ? `
-          <div class="info-item">
-            <h4>Live Project</h4>
-            <p><a href="${project.project_url}" target="_blank" class="external-link">${project.project_url}</a></p>
-          </div>
-        ` : ''}
-      </div>
-
-      <div class="project-section">
-        <h3>About This Project</h3>
-        <p class="project-full-description">${project.description}</p>
-      </div>
-
-      ${project.features && project.features.length > 0 ? `
-        <div class="project-section">
-          <h3>Key Features</h3>
-          <ul class="features-detail-list">
-            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
-          </ul>
-        </div>
-      ` : ''}
-
-      ${project.technologies && project.technologies.length > 0 ? `
-        <div class="project-section">
-          <h3>Technologies Used</h3>
-          <div class="tech-tags-detail">
-            ${project.technologies.map(tech => `<span class="tech-tag-detail">${tech}</span>`).join('')}
-          </div>
-        </div>
-      ` : ''}
-
-      ${galleryImages.length > 0 ? `
-        <div class="project-section">
-          <h3>Project Gallery</h3>
-          <div class="project-gallery">
-            ${galleryImages.map(img => `
-              <div class="gallery-item">
-                <img src="${img.image_url}" alt="${img.caption || project.title}" class="gallery-image" />
-                ${img.caption ? `<p class="gallery-caption">${img.caption}</p>` : ''}
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      ` : ''}
+    <!-- Header -->
+    <div class="mb-16">
+      <h1 class="text-6xl md:text-8xl font-black font-display uppercase leading-none mb-6">${project.title}</h1>
+      ${project.short_description ? `<p class="text-2xl font-medium max-w-3xl leading-relaxed">${project.short_description}</p>` : ''}
     </div>
+
+    <!-- Hero Image Mockup -->
+    ${thumbnailImage ? `
+    <div class="mockup-browser w-full shadow-2xl">
+      <div class="mockup-browser-header">
+        <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+      </div>
+      <img src="${thumbnailImage}" alt="${project.title}" class="w-full h-auto object-cover" />
+    </div>
+    ` : ''}
+
+    <!-- Info Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 py-12 border-y-2 border-black my-16">
+      ${project.client ? `<div><p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Client</p><p class="font-bold text-lg">${project.client}</p></div>` : ''}
+      ${project.duration ? `<div><p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Timeline</p><p class="font-bold text-lg">${project.duration}</p></div>` : ''}
+      ${project.completed_date ? `<div><p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Year</p><p class="font-bold text-lg font-mono">${new Date(project.completed_date).getFullYear()}</p></div>` : ''}
+      ${project.project_url ? `<div><p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Live Link</p><a href="${project.project_url}" target="_blank" class="font-bold text-lg underline hover:text-[var(--accent-dark)]">Visit Demo ↗</a></div>` : ''}
+    </div>
+
+    <!-- Narrative & Stack -->
+    <div class="grid md:grid-cols-12 gap-16 mb-16">
+      <div class="md:col-span-8 space-y-6">
+        <h3 class="text-3xl font-black font-display uppercase">The System</h3>
+        <div class="text-lg font-medium leading-relaxed space-y-4">
+          <p>${project.description.replace(/\\n/g, '<br/>')}</p>
+        </div>
+        
+        ${project.features && project.features.length > 0 ? `
+          <h3 class="text-3xl font-black font-display uppercase mt-12 mb-6">Key Features</h3>
+          <ul class="space-y-4">
+            ${project.features.map(feature => `<li class="flex items-start gap-4"><span class="text-[var(--accent-dark)] font-bold mt-1">■</span><span class="text-lg font-medium">${feature}</span></li>`).join('')}
+          </ul>
+        ` : ''}
+      </div>
+
+      <div class="md:col-span-4">
+        ${project.technologies && project.technologies.length > 0 ? `
+          <div class="bg-black text-white p-8 rounded-3xl border-2 border-black">
+            <h3 class="text-2xl font-black font-display uppercase mb-6 text-[var(--accent-color)]">Tech Stack</h3>
+            <div class="flex flex-wrap gap-3">
+              ${project.technologies.map(tech => `<span class="px-4 py-2 border border-white/20 rounded-lg font-bold text-sm uppercase">${tech}</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+
+    <!-- Gallery -->
+    ${galleryImages.length > 0 ? `
+      <div class="mt-24">
+        <h3 class="text-4xl font-black font-display uppercase mb-12 text-center">System Views</h3>
+        <div class="space-y-16">
+          ${galleryImages.map(img => `
+            <div>
+              <div class="mockup-browser shadow-xl">
+                <div class="mockup-browser-header">
+                  <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+                </div>
+                <img src="${img.image_url}" alt="${img.caption || project.title}" class="w-full h-auto object-cover" />
+              </div>
+              ${img.caption ? `<p class="text-center font-medium text-gray-500 mt-4 uppercase tracking-wide text-sm">${img.caption}</p>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    ` : ''}
   `;
 }
 
@@ -282,7 +280,6 @@ function renderSkills(skills) {
   const container = document.getElementById('skills-container');
   if (!container) return;
 
-  // Group skills by category
   const grouped = skills.reduce((acc, skill) => {
     const category = skill.category || 'Other';
     if (!acc[category]) acc[category] = [];
@@ -291,13 +288,16 @@ function renderSkills(skills) {
   }, {});
 
   container.innerHTML = Object.entries(grouped).map(([category, categorySkills]) => `
-    <div class="skills-category">
-      <h4>${category}</h4>
-      <ul class="skills-list">
+    <div class="mb-8">
+      <h3 class="text-xl font-bold uppercase tracking-widest text-black mb-4 border-b-2 border-black pb-2">${category}</h3>
+      <div class="flex flex-wrap gap-3">
         ${categorySkills.map(skill => `
-          <li>${skill.skill_name} ${skill.proficiency_level ? `<span class="proficiency">${skill.proficiency_level}</span>` : ''}</li>
+          <div class="px-4 py-2 border-2 border-black rounded-lg bg-white text-black font-bold flex items-center gap-2 hover:bg-black hover:text-[var(--accent-color)] transition-colors">
+            ${skill.skill_name}
+            ${skill.proficiency_level ? `<span class="text-xs opacity-50 bg-gray-200 text-black px-2 py-0.5 rounded-sm ml-1">${skill.proficiency_level}</span>` : ''}
+          </div>
         `).join('')}
-      </ul>
+      </div>
     </div>
   `).join('');
 }
@@ -306,16 +306,37 @@ function renderExperience(experience) {
   const container = document.getElementById('experience-container');
   if (!container) return;
 
-  container.innerHTML = experience.map(exp => `
-    <div class="experience-item">
-      <h4>${exp.title}</h4>
-      <p class="date-range">
-        ${exp.start_date ? new Date(exp.start_date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' }) : ''} 
-        ${exp.end_date ? `- ${new Date(exp.end_date).toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}` : (exp.is_current ? '- Present' : '')}
-      </p>
-      ${exp.description ? `<p>${exp.description}</p>` : ''}
+  container.innerHTML = experience.map((exp, index) => {
+    const start = exp.start_date ? new Date(exp.start_date).getFullYear() : '';
+    let end = exp.end_date ? new Date(exp.end_date).getFullYear() : (exp.is_current ? 'PRESENT' : '');
+    
+    // Fix for degrees spanning one year
+    if (start && start === end && exp.title.toLowerCase().includes('bachelor')) {
+      end = 'PRESENT';
+    }
+    
+    const dateStr = start ? (start === end ? start : `${start} — ${end}`) : '';
+
+    return `
+    <div class="relative pl-8 md:pl-0 border-l-2 md:border-l-0 border-black md:grid md:grid-cols-4 md:gap-8 pb-12 group">
+      <!-- Timeline dot for mobile -->
+      <div class="absolute left-[-9px] top-2 w-4 h-4 rounded-full bg-black md:hidden group-hover:bg-[var(--accent-color)] group-hover:border-2 group-hover:border-black transition-colors"></div>
+      
+      <!-- Date Column -->
+      <div class="md:col-span-1 md:text-right mb-2 md:mb-0 md:pr-8 md:border-r-2 md:border-black relative">
+        <span class="font-mono font-bold text-gray-500 uppercase tracking-widest">${dateStr}</span>
+        <!-- Timeline dot for desktop -->
+        <div class="hidden md:block absolute right-[-9px] top-2 w-4 h-4 rounded-full bg-black group-hover:bg-[var(--accent-color)] group-hover:border-2 group-hover:border-black transition-colors"></div>
+      </div>
+      
+      <!-- Content Column -->
+      <div class="md:col-span-3">
+        <h3 class="text-2xl font-black font-display uppercase leading-tight mb-2">${exp.title}</h3>
+        ${exp.company ? `<p class="text-[var(--accent-dark)] font-bold uppercase tracking-wide text-sm mb-4">${exp.company}</p>` : ''}
+        ${exp.description ? `<p class="font-medium text-gray-700 leading-relaxed max-w-2xl">${exp.description.replace(/\\n/g, '<br/>')}</p>` : ''}
+      </div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 // ============================================
@@ -337,16 +358,54 @@ document.addEventListener('DOMContentLoaded', async () => {
   const projectsContainer = document.getElementById('projects-container');
   const projectsLoading = document.getElementById('projects-loading');
   const projectsEmpty = document.getElementById('projects-empty');
+  let allProjectsData = [];
   
   if (projectsContainer) {
-    const projects = await fetchProjects();
+    allProjectsData = await fetchProjects();
     if (projectsLoading) projectsLoading.style.display = 'none';
     
-    if (projects.length === 0 && projectsEmpty) {
+    if (allProjectsData.length === 0 && projectsEmpty) {
       projectsEmpty.classList.remove('hidden');
     } else {
-      renderProjects(projects);
+      renderProjects(allProjectsData);
     }
+
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('#projects-filter button');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        // Update active class
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-black', 'text-white');
+          b.classList.add('bg-white', 'text-black');
+        });
+        e.target.classList.remove('bg-white', 'text-black');
+        e.target.classList.add('bg-black', 'text-white');
+
+        const filterVal = e.target.getAttribute('data-filter');
+        if (filterVal === 'all') {
+          renderProjects(allProjectsData);
+          return;
+        }
+
+        const filtered = allProjectsData.filter(p => {
+          const cat = p.category ? p.category.toLowerCase() : '';
+          const tags = p.technologies ? p.technologies.map(t=>t.toLowerCase()) : [];
+          if (filterVal === 'web') return cat.includes('web') || tags.includes('react') || tags.includes('laravel');
+          if (filterVal === 'mobile') return cat.includes('mobile') || tags.includes('flutter');
+          if (filterVal === 'ai') return cat.includes('ai') || tags.includes('rag') || tags.includes('python');
+          return false;
+        });
+
+        if (filtered.length === 0 && projectsEmpty) {
+          projectsContainer.innerHTML = '';
+          projectsEmpty.classList.remove('hidden');
+        } else {
+          if (projectsEmpty) projectsEmpty.classList.add('hidden');
+          renderProjects(filtered);
+        }
+      });
+    });
   }
 
   // Load and render project detail
