@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,44 +23,50 @@
       outline: none;
       border-radius: 0;
     }
+
     .form-input:focus {
       border-bottom-color: var(--accent-dark);
     }
+
     .form-input::placeholder {
       color: #999;
       font-weight: 500;
     }
+
     textarea.form-input {
       resize: vertical;
       min-height: 120px;
     }
   </style>
 </head>
+
 <body class="antialiased bg-[var(--bg-color)] flex flex-col min-h-screen">
-  
+
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 right-0 bg-[var(--bg-color)] border-b-2 border-black z-50 py-4">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
       <a href="index.html" class="text-2xl font-black font-display tracking-tight text-black">
         MRKNDRWSLMN<span class="text-[var(--accent-color)] drop-shadow-[0_1px_1px_rgba(0,0,0,1)]">.</span>
       </a>
-      
+
       <div class="hidden md:flex items-center gap-6 font-semibold uppercase text-sm">
         <a href="index.html" class="hover:text-[var(--accent-dark)] transition-colors">Home</a>
         <a href="about.html" class="hover:text-[var(--accent-dark)] transition-colors">About</a>
         <a href="projects.html" class="hover:text-[var(--accent-dark)] transition-colors">Work</a>
         <a href="resume.html" class="hover:text-[var(--accent-dark)] transition-colors">Resume</a>
-        <a href="contact.html" class="hover:text-[var(--accent-dark)] transition-colors border-b-2 border-black">Contact</a>
+        <a href="contact.html"
+          class="hover:text-[var(--accent-dark)] transition-colors border-b-2 border-black">Contact</a>
       </div>
 
-      <div class="hidden md:flex items-center gap-2 border-2 border-black rounded-full px-4 py-1 text-xs font-bold uppercase bg-[var(--accent-color)] text-black">
+      <div
+        class="hidden md:flex items-center gap-2 border-2 border-black rounded-full px-4 py-1 text-xs font-bold uppercase bg-[var(--accent-color)] text-black">
         <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
-        Open to OJT
+        Open to Work
       </div>
-      
+
       <button id="mobile-menu-btn" class="md:hidden text-black font-bold uppercase">Menu</button>
     </div>
-    
+
     <div id="mobile-menu" class="hidden md:hidden border-t-2 border-black mt-4 bg-[var(--bg-color)]">
       <div class="flex flex-col font-bold uppercase text-lg p-6 gap-4">
         <a href="index.html" class="hover:text-[var(--accent-dark)]">Home</a>
@@ -74,26 +81,29 @@
   <!-- Content -->
   <main class="flex-grow pt-32 pb-24 px-6 lg:px-8 max-w-7xl mx-auto w-full">
     <div class="grid lg:grid-cols-2 gap-16">
-      
+
       <!-- Left: Header & Info -->
       <div>
         <h1 class="text-7xl md:text-9xl font-black font-display mb-8 uppercase leading-none">
           LET'S<br>
           <span class="text-[var(--accent-dark)]">TALK.</span>
         </h1>
-        
+
         <div class="space-y-8 mt-12 text-xl font-medium">
           <div>
             <p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Email</p>
-            <a href="mailto:markandrewsoliman@outlook.com" class="hover:text-[var(--accent-dark)] transition-colors border-b-2 border-transparent hover:border-[var(--accent-dark)]">
+            <a href="mailto:markandrewsoliman@outlook.com"
+              class="hover:text-[var(--accent-dark)] transition-colors border-b-2 border-transparent hover:border-[var(--accent-dark)]">
               markandrewsoliman@outlook.com
             </a>
           </div>
           <div>
             <p class="text-sm font-bold uppercase tracking-widest text-gray-500 mb-2">Socials</p>
             <div class="flex gap-6">
-              <a href="https://github.com/mrkndrwslmn" class="hover:text-[var(--accent-dark)] font-bold uppercase underline">GitHub ↗</a>
-              <a href="https://linkedin.com/in/markandrewsoliman" class="hover:text-[var(--accent-dark)] font-bold uppercase underline">LinkedIn ↗</a>
+              <a href="https://github.com/mrkndrwslmn"
+                class="hover:text-[var(--accent-dark)] font-bold uppercase underline">GitHub ↗</a>
+              <a href="https://linkedin.com/in/markandrewsoliman"
+                class="hover:text-[var(--accent-dark)] font-bold uppercase underline">LinkedIn ↗</a>
             </div>
           </div>
           <div>
@@ -116,18 +126,20 @@
           <div>
             <textarea placeholder="Tell me about your project..." class="form-input" required></textarea>
           </div>
-          <button type="submit" class="pill-btn w-full justify-center text-xl py-4 bg-black text-white hover:bg-[var(--accent-color)] hover:text-black border-2 border-black">
+          <button type="submit"
+            class="pill-btn w-full justify-center text-xl py-4 bg-black text-white hover:bg-[var(--accent-color)] hover:text-black border-2 border-black">
             Send Message ↗
           </button>
         </form>
       </div>
-      
+
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="py-8 px-6 lg:px-8 border-t-2 border-black bg-black text-white mt-auto">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold uppercase tracking-widest">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-bold uppercase tracking-widest">
       <p>&copy; 2026 MARK SOLIMAN.</p>
       <div class="flex items-center gap-2">
         <span class="w-2 h-2 bg-[var(--accent-color)] rounded-full animate-pulse"></span>
@@ -137,9 +149,10 @@
   </footer>
 
   <script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+    document.getElementById('mobile-menu-btn').addEventListener('click', function () {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
   </script>
 </body>
+
 </html>
